@@ -360,7 +360,7 @@ def test_sig_retry_and_signal(long delay=DEFAULT_DELAY):
     TESTS::
 
         >>> from cysignals.tests import *
-        >>> test_sig_retry_and_signal()  # doctest: +SKIP_WINDOWS
+        >>> test_sig_retry_and_signal()
         KeyboardInterrupt()
 
     """
@@ -639,17 +639,8 @@ def unguarded_abort():
     We run Python in a subprocess and make it call abort()::
 
         >>> from cysignals.tests import subpython_err
-        >>> subpython_err('from cysignals.tests import *; unguarded_abort()')  # doctest: +SKIP_WINDOWS
-        ---------------------------------------------------------------------...
-        Unhandled SIGABRT: An abort() occurred.
-        This probably occurred because a *compiled* module has a bug
-        in it and is not properly wrapped with sig_on(), sig_off().
-        Python will now terminate.
-        ------------------------------------------------------------------------
-        >>> subpython_err('from cysignals.tests import *; unguarded_abort()')  # doctest: +SKIP_POSIX
-        <BLANKLINE>
+        >>> subpython_err('from cysignals.tests import *; unguarded_abort()')
         ...
-        ---------------------------------------------------------------------...
         Unhandled SIGABRT: An abort() occurred.
         This probably occurred because a *compiled* module has a bug
         in it and is not properly wrapped with sig_on(), sig_off().
@@ -993,7 +984,7 @@ def test_sig_block(long delay=DEFAULT_DELAY):
     TESTS::
 
         >>> from cysignals.tests import *
-        >>> test_sig_block()  # doctest: +SKIP_WINDOWS
+        >>> test_sig_block()
         42
 
     """
@@ -1019,7 +1010,7 @@ def test_sig_block_nested(long delay=DEFAULT_DELAY):
     TESTS::
 
         >>> from cysignals.tests import *
-        >>> test_sig_block()  # doctest: +SKIP_WINDOWS
+        >>> test_sig_block()
         42
 
     """
